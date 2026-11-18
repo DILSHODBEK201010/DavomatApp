@@ -1,0 +1,425 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080b14;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 250px;
+    background: #101522;
+    border-right: 1px solid #222c40;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 25px;
+    margin-bottom: 45px;
+}
+
+.logo span {
+    color: #00e5ff;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu {
+    padding: 15px;
+    border: none;
+    background: transparent;
+    color: #aab4c8;
+    text-align: left;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.menu:hover,
+.menu.active {
+    background: #142b3d;
+    color: #00e5ff;
+    box-shadow: 0 0 12px #00e5ff20;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    color: #68758c;
+    font-size: 12px;
+}
+
+/* MAIN */
+
+.main {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    padding: 35px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    gap: 15px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #8290a8;
+    font-size: 14px;
+}
+
+.sana {
+    color: #00e5ff;
+    font-size: 14px;
+}
+
+/* STATISTIKA */
+
+.statistika {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #101827;
+    border: 1px solid #26364b;
+    border-radius: 14px;
+    padding: 23px;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    border-color: #00e5ff;
+    transform: translateY(-4px);
+}
+
+.stat-card span {
+    color: #9baac0;
+    font-size: 13px;
+}
+
+.stat-card h2 {
+    margin-top: 15px;
+    font-size: 32px;
+    color: #00e5ff;
+}
+
+/* SECTION */
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    font-size: 21px;
+}
+
+.card {
+    background: #101827;
+    border: 1px solid #26364b;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 22px;
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+/* FORM */
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+input,
+select {
+    background: #080e1a;
+    border: 1px solid #334155;
+    color: white;
+    padding: 13px;
+    border-radius: 9px;
+    outline: none;
+    min-width: 180px;
+}
+
+input:focus,
+select:focus {
+    border-color: #00e5ff;
+    box-shadow: 0 0 8px #00e5ff30;
+}
+
+select option {
+    background: #101827;
+}
+
+.form button {
+    background: #00d9f5;
+    color: #06111b;
+    border: none;
+    border-radius: 9px;
+    padding: 13px 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.form button:hover {
+    background: #70efff;
+    box-shadow: 0 0 15px #00e5ff60;
+}
+
+/* GURUHLAR */
+
+.guruh-item {
+    background: #0b1321;
+    border: 1px solid #26364b;
+    padding: 17px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+}
+
+.guruh-item strong {
+    color: #00e5ff;
+}
+
+.guruh-item p {
+    color: #8795aa;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+/* DAVOMAT */
+
+.student-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 17px 0;
+    border-bottom: 1px solid #26364b;
+}
+
+.student-name {
+    font-weight: bold;
+}
+
+.holatlar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.holatlar button {
+    padding: 9px 13px;
+    border-radius: 7px;
+    border: 1px solid #334155;
+    background: #101827;
+    color: #aab4c8;
+    transition: 0.2s;
+}
+
+.holatlar button:hover {
+    border-color: #00e5ff;
+}
+
+.holatlar button.active {
+    background: #00d9f5;
+    color: #06111b;
+    border-color: #00d9f5;
+}
+
+.empty {
+    color: #8492a8;
+    padding: 15px 0;
+}
+
+/* HISOBOT */
+
+.hisobot-foiz {
+    color: #00e5ff;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.hisobot-jami {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    color: #aab4c8;
+    font-size: 13px;
+}
+
+/* PAGE */
+
+.hidden {
+    display: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .statistika {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px;
+    }
+
+    .sidebar .logo {
+        margin-bottom: 15px;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .main {
+        width: 100%;
+        margin-left: 0;
+        padding: 18px;
+    }
+
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .statistika {
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card h2 {
+        font-size: 25px;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .form input,
+    .form select,
+    .form button {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .student-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .holatlar {
+        width: 100%;
+    }
+
+    .holatlar button {
+        flex: 1;
+    }
+
+    .card {
+        padding: 17px;
+    }
+}
+
+.uchirish {
+    background: #ff3b55;
+    color: white;
+    border: none;
+    padding: 9px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.uchirish:hover {
+    background: #d91e39;
+    box-shadow: 0 0 12px #ff3b5560;
+}
+
+.uquvchilar {
+    padding: 0 12px 12px;
+}
+
+.uquvchi-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: #0b1321;
+    border: 1px solid #26364b;
+    border-radius: 8px;
+    color: #cbd5e1;
+}

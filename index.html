@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davomat System</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h2 class="logo">DAVOMAT<span>.</span></h2>
+
+            <nav>
+                <button class="menu active" data-page="bosh">
+                    🏠 Bosh sahifa
+                </button>
+
+                <button class="menu" data-page="guruhlar">
+                    👥 Guruhlar
+                </button>
+
+                <button class="menu" data-page="davomat">
+                    📅 Davomat
+                </button>
+
+                <button class="menu" data-page="hisobot">
+                    📊 Hisobotlar
+                </button>
+            </nav>
+
+            <p class="sidebar-bottom">Davomat System v1.0</p>
+
+        </aside>
+
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <header>
+                <div>
+                    <h1 id="sarlavha">Bosh sahifa</h1>
+                    <p>O‘quv markazi boshqaruv paneli</p>
+                </div>
+
+                <div class="sana" id="bugungiSana"></div>
+            </header>
+
+
+            <!-- STATISTIKA -->
+            <section class="statistika">
+
+                <div class="stat-card">
+                    <span>Jami o‘quvchilar</span>
+                    <h2 id="jamiUquvchi">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>Jami guruhlar</span>
+                    <h2 id="jamiGuruh">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>Bugun kelganlar</span>
+                    <h2 id="kelganlar">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>Bugun kelmaganlar</span>
+                    <h2 id="kelmaganlar">0</h2>
+                </div>
+
+            </section>
+
+
+            <!-- BOSH SAHIFA -->
+            <section class="page" id="bosh">
+
+                <div class="section-title">
+                    <h2>So‘nggi ma'lumotlar</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Barcha guruhlar</h3>
+                    <div id="boshGuruhlar"></div>
+                </div>
+
+            </section>
+
+
+            <!-- GURUHLAR -->
+            <section class="page hidden" id="guruhlar">
+
+                <div class="section-title">
+                    <h2>Guruhlarni boshqarish</h2>
+                </div>
+
+                <!-- GURUH YARATISH -->
+                <div class="card">
+
+                    <h3>Yangi guruh yaratish</h3>
+
+                    <div class="form">
+
+                        <input
+                            type="text"
+                            id="guruhNomi"
+                            placeholder="Guruh nomini kiriting"
+                        >
+
+                        <button id="guruhQushish">
+                            + Guruh yaratish
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- O'QUVCHI QO'SHISH -->
+                <div class="card">
+
+                    <h3>Yangi o‘quvchi qo‘shish</h3>
+
+                    <div class="form">
+
+                        <input
+                            type="text"
+                            id="uquvchiIsmi"
+                            placeholder="O‘quvchi ismi"
+                        >
+
+                        <select id="uquvchiGuruh">
+                            <option value="">Guruhni tanlang</option>
+                        </select>
+
+                        <button id="uquvchiQushish">
+                            + O‘quvchi qo‘shish
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GURUHLAR RO'YXATI -->
+                <div class="card">
+
+                    <h3>Barcha guruhlar</h3>
+
+                    <div id="guruhlarRoyxati"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DAVOMAT -->
+            <section class="page hidden" id="davomat">
+
+                <div class="section-title">
+                    <h2>Davomat olish</h2>
+                </div>
+
+                <div class="card">
+
+                    <h3>Guruh va sanani tanlang</h3>
+
+                    <div class="form">
+
+                        <select id="davomatGuruh">
+                            <option value="">Guruhni tanlang</option>
+                        </select>
+
+                        <input type="date" id="davomatSana">
+
+                    </div>
+
+                    <div id="davomatRoyxati">
+                        <p class="empty">
+                            Avval guruhni tanlang.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- HISOBOT -->
+            <section class="page hidden" id="hisobot">
+
+                <div class="section-title">
+                    <h2>Davomat hisobotlari</h2>
+                </div>
+
+                <div class="card">
+
+                    <h3>Hisobotni tanlash</h3>
+
+                    <div class="form">
+
+                        <select id="hisobotGuruh">
+                            <option value="">Guruhni tanlang</option>
+                        </select>
+
+                        <select id="hisobotTuri">
+                            <option value="oy">Oylik hisobot</option>
+                            <option value="yil">Yillik hisobot</option>
+                        </select>
+
+                        <input type="month" id="hisobotOy">
+
+                        <input
+                            type="number"
+                            id="hisobotYil"
+                            placeholder="Yil"
+                            min="2000"
+                            max="2100"
+                        >
+
+                    </div>
+
+                    <div id="hisobotNatija">
+                        <p class="empty">
+                            Hisobot uchun guruhni tanlang.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
